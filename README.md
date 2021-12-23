@@ -55,11 +55,11 @@ The backend API uses a fixed set of cached search results and is limited to a pa
 ## Screenshots
 
 * A screenshot of the web app home page: 
-![Screenshot1](./src/public/images/Homepage.PNG "Screenshot")
+![Screenshot1](./public/images/Homepage.png "Screenshot")
 * A screenshot of a shelf page, all shelf pages share the same structure: 
-![Screenshot1](./src/public/images/shelf.PNG "Screenshot")
+![Screenshot1](./public/images/shelf.png "Screenshot")
 * A screenshot of the web app search page; showing books that appear when searching for "Art". 
-![Screenshot1](./src/public/images/search.PNG "Screenshot")
+![Screenshot1](./public/images/search.png "Screenshot")
 
 
 ## Credits & Resources
