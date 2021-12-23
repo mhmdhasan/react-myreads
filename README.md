@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# My Reads Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+MyReads is a webapp to organize books into categories: 'read', 'want to read' and 'currently reading'. Books are looked up from in a public database through a 'search' function.
 
-## Available Scripts
+## Table of content
 
-In the project directory, you can run:
+-   [Overview](#overview)
+-   [How to run the project](#how-to-run-the-project)
+-   [App Functionality](#app-functionality)
+-   [Screenshots](#screenshots)
+-   [Credits & Resources ](#credits-&-resources)
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This app is built with functional components, managing state using the mix of **useContext** and **useReducer** React Hooks, as a starting point, I was given a starter static template without any of the React code that was needed to complete the project. My job was be to add interactivity to the app by refactoring the static code in this template.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## How to run the project
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To run the project, download or clone the repository in your computer:
 
-### `npm run build`
+    $ git clone https://github.com/mhmdhasan/react-myreads.git
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+and follow the instructions below.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+In the repository folder: 
+* install all project dependencies with 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+        npm install
+* start the development server with 
 
-### `npm run eject`
+        npm start
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Please note that the backend server -against which the web app was developped- was provided by Udacity. I transformed the provided methods exist in [`BooksAPI.js`](src/BooksAPI.js) file to fit the new way I've developed this app, the new methods placed at [`app_context.js`](src/context/app_context.js) and they are as following
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* `getAll` => `fetchBooks`
+* `search` => `searchBooks`
+* `update` => `update`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## App functionality
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+In this app, the main page displays all the picked books, organized differently by two categories [Top rated books, Large books], as well as listing of all books. The leftside sidebar holds all the pages exist: 
 
-## Learn More
+* Home
+* Currently Reading
+* Want to read
+* Read
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+All app pages -apart from search page- contains an anchor leads to the search pages, from the search page you can redirect to any page through the sidebar menu.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The search page has a text input field that may be used to find books. As the value of the text input changes, the books that match that query are displayed on the corresponding shelf page, along with a control that lets the user add the book to their library, they're outlined with their updated shelfs on the homepage too. 
 
-### Code Splitting
+The backend API uses a fixed set of cached search results and is limited to a particular set of search terms, which can be found in [**SEARCH_TERMS.md**](SEARCH_TERMS.md). That list of terms are the **only terms** that will work with the backend, so don't be surprised if your searches for Basket Weaving or Bubble Wrap don't come back with any results.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Screenshots
 
-### Analyzing the Bundle Size
+* A screenshot of the web app home page: 
+![Screenshot1](./src/public/images/Homepage.PNG "Screenshot")
+* A screenshot of a shelf page, all shelf pages share the same structure: 
+![Screenshot1](./src/public/images/shelf.PNG "Screenshot")
+* A screenshot of the web app search page; showing books that appear when searching for "Art". 
+![Screenshot1](./src/public/images/search.PNG "Screenshot")
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+## Credits & Resources
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Create-react-app Documentation](https://github.com/facebookincubator/create-react-app)
+- [React Router Documentation](http://knowbody.github.io/react-router-docs/)
+- [React Training/React Router](https://reacttraining.com/react-router/web/api/BrowserRouter)
+- [React Icons](https://react-icons.github.io/react-icons)
