@@ -123,7 +123,7 @@ export function reducer(state, action) {
 
     /* ===============================================================
     🟠 THROUGH ERROR IF ACTION IS NOT FOUND
-        • Show an indicator error if the dev is trying to dispactch
+        • Show an indicator error if you trying to dispactch
           an action that is not existing in the reducer 
     =============================================================== */
     throw new Error(`There's no matching ${action.type} - action type`);
