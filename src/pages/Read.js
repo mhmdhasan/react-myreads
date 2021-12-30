@@ -25,8 +25,10 @@ function Read() {
             </h2>
 
             <div className='row g-5'>
-                {matchedBooks.map((book) => {
-                    return <BookItem key={book.id} {...book} prevShelf='read' coreFunction={updateBooks} />;
+                {matchedBooks.map((book, index) => {
+                    return (
+                        <BookItem key={book.id} {...book} index={index} prevShelf='read' coreFunction={updateBooks} />
+                    );
                 })}
 
                 {matchedBooks.length === 0 ? <p className='text-muted'>There're no books at the moment.</p> : null}

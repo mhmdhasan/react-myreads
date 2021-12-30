@@ -19,8 +19,8 @@ function BookList() {
                         </span>
                     </h2>
                     <div className='row g-5'>
-                        {topRated.map((book) => {
-                            return <BookItem key={book.id} {...book} coreFunction={updateBooks} />;
+                        {topRated.map((book, index) => {
+                            return <BookItem key={book.id} {...book} index={index} coreFunction={updateBooks} />;
                         })}
                     </div>
                 </section>
@@ -34,8 +34,8 @@ function BookList() {
                         </span>
                     </h2>
                     <div className='row g-5'>
-                        {largeBooks.map((book) => {
-                            return <BookItem key={book.id} {...book} coreFunction={updateBooks} />;
+                        {largeBooks.map((book, index) => {
+                            return <BookItem key={book.id} {...book} index={index} coreFunction={updateBooks} />;
                         })}
                     </div>
                 </section>
@@ -49,8 +49,8 @@ function BookList() {
                         </span>
                     </h2>
                     <div className='row g-5'>
-                        {books.map((book) => {
-                            return <BookItem key={book.id} {...book} coreFunction={updateBooks} />;
+                        {books.map((book, index) => {
+                            return <BookItem key={book.id} {...book} index={index} coreFunction={updateBooks} />;
                         })}
                     </div>
                 </section>

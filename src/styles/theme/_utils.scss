@@ -271,6 +271,14 @@ $spacing: 0.1em 0.2em 0.3em 0.4em 0.5em;
     display: flex;
     align-items: center;
 
+    @include media-breakpoint-down(lg) {
+        margin-right: 1rem;
+    }
+
+    @include media-breakpoint-down(md) {
+        align-items: flex-start;
+    }
+
     .badge {
         font-size: 0.9rem;
         position: relative;
@@ -279,6 +287,12 @@ $spacing: 0.1em 0.2em 0.3em 0.4em 0.5em;
         vertical-align: middle;
         flex-shrink: 0;
         transform: translateY(-2px);
+        @include media-breakpoint-down(lg) {
+            margin-left: 0;
+            &::before {
+                display: none !important;
+            }
+        }
 
         &::before {
             content: '';
@@ -299,5 +313,9 @@ $spacing: 0.1em 0.2em 0.3em 0.4em 0.5em;
         color: $primary;
         vertical-align: middle;
         margin-right: 0.75rem;
+        flex-shrink: 0;
+        @include media-breakpoint-down(md) {
+            margin-top: 0.2rem;
+        }
     }
 }

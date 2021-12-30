@@ -47,13 +47,14 @@ function Search() {
                 ) : null}
 
                 {/* Return books from searching */}
-                {searchResult.map((book) => {
+                {searchResult.map((book, index) => {
                     return (
                         <BookItem
                             key={book.id}
                             {...book}
                             prevShelf={book.shelf ? book.shelf : 'moveto'}
                             coreFunction={addNewBook}
+                            index={index}
                         />
                     );
                 })}

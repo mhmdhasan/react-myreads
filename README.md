@@ -67,4 +67,5 @@ The backend API uses a fixed set of cached search results and is limited to a pa
 - [Create-react-app Documentation](https://github.com/facebookincubator/create-react-app)
 - [React Router Documentation](http://knowbody.github.io/react-router-docs/)
 - [React Training/React Router](https://reacttraining.com/react-router/web/api/BrowserRouter)
-- [React Icons](https://react-icons.github.io/react-icons)
+- [React Icons](https://react-icons.github.io/react-icons).
+

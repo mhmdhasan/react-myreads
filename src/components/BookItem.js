@@ -2,12 +2,18 @@ import React from 'react';
 import Authors from './book-item/Authors';
 import ShelfChanger from './book-item/shelfChanger';
 import Title from './book-item/Title';
+import { motion } from 'framer-motion';
 
-function BookItem({ id, authors, title, imageLinks, shelf, prevShelf, coreFunction }) {
+function BookItem({ id, authors, title, imageLinks, shelf, prevShelf, coreFunction, index }) {
     return (
-        <div className='book-item col-xl-3 col-lg-4 col-md-6'>
+        <motion.div
+            className='book-item col-xl-3 col-lg-4 col-md-6'
+            initial={{ y: -8, opacity: 0 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index / 5, duration: 0.5 }}
+        >
             {/* BOOKS THEMBNAIL */}
-            <div className='book-poster  mb-4' style={{ backgroundImage: `url(${imageLinks.thumbnail})` }}></div>
+            <div className='book-poster mb-4' style={{ backgroundImage: `url(${imageLinks.thumbnail})` }}></div>
 
             <div className='info-holder'>
                 {/* CHANGE SHLEF SELECT INPUT */}
@@ -17,7 +23,7 @@ function BookItem({ id, authors, title, imageLinks, shelf, prevShelf, coreFuncti
                 {/* BOOK AUTHORS */}
                 <Authors authors={authors} />
             </div>
-        </div>
+        </motion.div>
     );
 }
 
